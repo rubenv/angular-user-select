@@ -40,7 +40,7 @@ angular.module('rt.userselect', []).factory('userSelect', function () {
       restrict: 'A',
       link: function (scope, el) {
         userSelect._add(el);
-        scope.$watch('$destroy', function () {
+        scope.$on('$destroy', function () {
           userSelect._remove(el);
         });
       }
